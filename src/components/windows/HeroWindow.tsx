@@ -14,7 +14,7 @@ function HeroWindow() {
         <div className="space-y-4">
           <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-2 text-sm text-cyan-200">
             <Sparkles className="h-4 w-4" />
-            Senior Frontend Engineer • React • TypeScript
+            Full stack Frontend Engineer • React • TypeScript
           </div>
           <div className="space-y-3">
             <h1 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">
