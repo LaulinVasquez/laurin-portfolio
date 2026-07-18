@@ -4,6 +4,10 @@ Laurin OS is my personal software engineering portfolio. It presents selected wo
 
 Instead of traditional portfolio pages, the site uses reusable application windows and a functional dock to move between the home screen, featured projects, individual project workspaces, source code, and contact form.
 
+## Live Portfolio
+
+Visit the deployed portfolio at [laurin-portfolio.vercel.app](https://laurin-portfolio.vercel.app/).
+
 ## Current Features
 
 - Desktop-inspired interface with translucent windows and a fixed application dock
@@ -102,6 +106,12 @@ Vite will print the local development URL in the terminal.
 npm run build
 npm run preview
 ```
+
+## Deployment
+
+The portfolio is deployed on Vercel:
+
+- [https://laurin-portfolio.vercel.app/](https://laurin-portfolio.vercel.app/)
 
 ## Validation
 
