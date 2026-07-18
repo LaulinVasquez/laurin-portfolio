@@ -57,16 +57,16 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: 'campus-companion',
-    title: 'Campus Companion',
+    id: 'garden-landscaping-pros',
+    title: 'Garden & Landscaping Pros',
     description:
-      'An early Expo and React Native prototype establishing the mobile foundation for a future campus classes, events, and maps companion.',
-    techStack: ['React Native', 'Expo', 'TypeScript'],
-    status: 'Prototype',
+      'A responsive service website with an MVC-style Express backend and a validated quote-request workflow that can deliver structured emails.',
+    techStack: ['Node.js', 'Express', 'EJS', 'Nodemailer', 'CSS'],
+    status: 'In development',
     links: [
       {
         label: 'GitHub',
-        href: 'https://github.com/LaulinVasquez/Campus-Companion',
+        href: 'https://github.com/LaulinVasquez/garden-landscaping-pros-website',
         kind: 'github',
       },
     ],

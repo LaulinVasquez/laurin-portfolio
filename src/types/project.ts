@@ -1,4 +1,4 @@
-export type ProjectStatus = 'Live' | 'In development' | 'Complete' | 'Prototype'
+export type ProjectStatus = 'Live' | 'In development' | 'Complete'
 
 export type ProjectLinkKind = 'github' | 'demo'
 

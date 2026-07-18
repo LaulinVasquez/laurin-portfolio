@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { useEffect, useRef } from 'react'
 import type { ReactNode } from 'react'
 import type { LucideIcon } from 'lucide-react'
 
@@ -9,6 +10,7 @@ interface PortfolioWindowProps {
   children: ReactNode
   compact?: boolean
   className?: string
+  focusOnMount?: boolean
 }
 
 function PortfolioWindow({
@@ -18,7 +20,16 @@ function PortfolioWindow({
   children,
   compact = false,
   className = '',
+  focusOnMount = false,
 }: PortfolioWindowProps) {
+  const headingRef = useRef<HTMLHeadingElement>(null)
+
+  useEffect(() => {
+    if (focusOnMount) {
+      headingRef.current?.focus()
+    }
+  }, [focusOnMount])
+
   return (
     <motion.section
       initial={{ opacity: 0, y: 20 }}
@@ -35,7 +46,11 @@ function PortfolioWindow({
             </div>
           ) : null}
           <div>
-            <h2 className="text-sm font-semibold tracking-[0.24em] text-slate-200 uppercase">
+            <h2
+              ref={headingRef}
+              tabIndex={focusOnMount ? -1 : undefined}
+              className="text-sm font-semibold tracking-[0.24em] text-slate-200 uppercase focus-visible:rounded-sm focus-visible:outline-none"
+            >
               {title}
             </h2>
             {subtitle ? <p className="text-sm text-slate-400">{subtitle}</p> : null}

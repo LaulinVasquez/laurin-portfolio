@@ -2,27 +2,19 @@ Read AGENTS.md and inspect the current implementation.
 
 Do not edit files yet.
 
-Plan Milestone 2: a data-driven Featured Projects section for Laurin OS.
+Plan Milestone 3: an actual desktop experience.
 
-Use the existing architecture and create or update:
-
-- src/types/project.ts
-- src/data/projects.ts
-- src/components/projects/ProjectCard.tsx
-- src/components/projects/FeaturedProjects.tsx
-- src/pages/HomePage.tsx
+Goal:
+- Clicking a project card opens a dedicated project window
+- Animate windows smoothly using Framer Motion
+- keep the experience on smaller screens.
+- Ensure keyboard accessibility and proper focust management.
+- Reuse the existing PortfolioWindow instead of creating a new window component
+- AppDock Contact: create a new page that contains a form where users can send emails to laurin171125@gmail.com
 
 Requirements:
 
-- Feature Smart Budget Pro, Stock Market Dashboard, OTP Bank, and Campus Companion.
-- Store all project content in projects.ts.
-- Use a reusable ProjectCard component.
-- Each card should show title, short description, tech stack, project status, and links for GitHub or live demo when available.
-- Keep the desktop operating-system visual style.
-- Make the cards responsive and keyboard accessible.
-- Avoid adding modal windows, dragging, routing, or complex state.
-- Use honest project descriptions based on the actual work completed.
-- Explain the proposed TypeScript types, component responsibilities, responsive behavior, and accessibility considerations.
-- List every file that would change.
+- Change campus Companion for Garden-lanscaping-pros-website, update projects in the data folder for the Garden-lanscaping-pros-website while keeping the remaining except campus-companion
+- Implement Goals when I command you approved
 
 Do not implement anything until I approve the plan.
