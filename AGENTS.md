@@ -1,81 +1,28 @@
-Read AGENTS.md and inspect the entire repository.
+Read AGENTS.md and inspect the current implementation.
 
-Do not edit any files yet.
+Do not edit files yet.
 
-I am building a professional developer portfolio called “Laurin OS.”
+Plan Milestone 2: a data-driven Featured Projects section for Laurin OS.
 
-The portfolio should feel like a polished desktop operating system or developer mission-control interface, while remaining clean, accessible, responsive, and recruiter-friendly.
+Use the existing architecture and create or update:
 
-You must preserve the existing architecture:
-
-- src/components/desktop
-- src/components/windows
-- src/components/projects
-- src/components/navigation
-- src/components/ui
-- src/data
-- src/layouts
-- src/pages
-- src/styles
-- src/types
-
-For Milestone 1, propose an implementation plan using these files:
-
-- src/components/desktop/DesktopShell.tsx
-- src/components/desktop/DesktopBackground.tsx
-- src/components/windows/PortfolioWindow.tsx
-- src/components/windows/HeroWindow.tsx
-- src/components/navigation/TopBar.tsx
-- src/components/navigation/AppDock.tsx
-- src/components/ui/IconButton.tsx
-- src/components/ui/PrimaryButton.tsx
-- src/layouts/PortfolioLayout.tsx
+- src/types/project.ts
+- src/data/projects.ts
+- src/components/projects/ProjectCard.tsx
+- src/components/projects/FeaturedProjects.tsx
 - src/pages/HomePage.tsx
-- src/styles/globals.css
-- src/styles/animations.css
-- src/App.tsx
 
-Milestone 1 must include:
+Requirements:
 
-1. A full-screen desktop environment
-2. A subtle dark background with blue lighting effects
-3. A professional top navigation bar
-4. A reusable portfolio window component
-5. A hero introduction window
-6. A bottom application dock
-7. A responsive mobile foundation
-8. Keyboard accessibility
-9. Reduced-motion support
-10. Clean TypeScript interfaces
-
-Use:
-
-- React
-- TypeScript
-- TSX
-- Tailwind CSS
-- Framer Motion
-- Lucide React
-
-The component hierarchy should follow this structure:
-
-App
-└── PortfolioLayout
-    └── DesktopShell
-        ├── TopBar
-        ├── HomePage
-        │   └── HeroWindow
-        │       └── PortfolioWindow
-        └── AppDock
-
-For every component, explain:
-
-- Its responsibility
-- Its TypeScript props
-- Its child components
-- Its responsive behavior
-- Its accessibility considerations
-
-Also list every file that will be created or changed.
+- Feature Smart Budget Pro, Stock Market Dashboard, OTP Bank, and Campus Companion.
+- Store all project content in projects.ts.
+- Use a reusable ProjectCard component.
+- Each card should show title, short description, tech stack, project status, and links for GitHub or live demo when available.
+- Keep the desktop operating-system visual style.
+- Make the cards responsive and keyboard accessible.
+- Avoid adding modal windows, dragging, routing, or complex state.
+- Use honest project descriptions based on the actual work completed.
+- Explain the proposed TypeScript types, component responsibilities, responsive behavior, and accessibility considerations.
+- List every file that would change.
 
 Do not implement anything until I approve the plan.
