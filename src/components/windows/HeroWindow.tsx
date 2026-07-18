@@ -1,33 +1,39 @@
-import { ArrowUpRight, Code2, Cpu, Sparkles } from 'lucide-react'
+import { ArrowUpRight, Cpu, FileText, Sparkles } from 'lucide-react'
 import PrimaryButton from '../ui/PrimaryButton'
 import PortfolioWindow from './PortfolioWindow'
 
 function HeroWindow() {
   return (
     <PortfolioWindow
-      title="Mission Control"
+      title="Developer Mission Control"
       subtitle="Building calm, reliable product experiences"
       icon={Cpu}
-      className="relative"
-    >
+      className="relative">
       <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
-        <div className="space-y-4">
+        <div className="space-y-6">
           <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-2 text-sm text-cyan-200">
             <Sparkles className="h-4 w-4" />
-            Full stack Frontend Engineer • React • TypeScript
+            Software Engineer Student • Full stack Developer
           </div>
           <div className="space-y-3">
             <h1 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-              I turn complex product ideas into polished, dependable interfaces.
+              I turn real world ideas into reliable full-stack applications.
             </h1>
             <p className="max-w-2xl text-lg leading-8 text-slate-300">
-              I build mission-critical web experiences with thoughtful UX, strong collaboration,
-              and a focus on clarity for both users and teams.
+              I build responsive software with React, TypeScript, Node.js, Express,
+              and PostgreSQL, with a focus on clean architecture and practical user
+              experiences.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
             <PrimaryButton label="View projects" href="#projects" icon={ArrowUpRight} />
-            <PrimaryButton label="Open resume" href="#contact" icon={Code2} />
+            <PrimaryButton
+              label="Open resume"
+              href="/resume/Laurin-vasquez-resume.pdf"
+              icon={FileText}
+              target="_blank"
+              rel="noreferrer"
+            />
           </div>
         </div>
 

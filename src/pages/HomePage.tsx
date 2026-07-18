@@ -1,12 +1,10 @@
 import HeroWindow from '../components/windows/HeroWindow'
 
-interface HomePageProps {
-  className?: string
-}
 
-function HomePage({ className = '' }: HomePageProps) {
+
+function HomePage() {
   return (
-    <section id="home" className={`flex w-full flex-col gap-6 ${className}`.trim()}>
+    <section id="home" className='flex w-full flex-col gap-6'>
       <HeroWindow />
     </section>
   )

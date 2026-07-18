@@ -17,8 +17,8 @@ function DesktopShell({ children }: DesktopShellProps) {
           brandName="Laurin OS"
           navItems={[
             { label: 'Home', href: '#home' },
-            { label: 'Projects', href: '#projects' },
-            { label: 'Contact', href: '#contact' },
+            // { label: 'Projects', href: '#projects' },
+            // { label: 'Contact', href: '#contact' },
           ]}
           statusText="Available for product teams"
         />
