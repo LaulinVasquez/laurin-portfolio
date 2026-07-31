@@ -18,29 +18,29 @@ function ContactPage() {
   }
 
   const inputClassName =
-    'mt-2 w-full rounded-2xl border border-white/10 bg-slate-950/50 px-4 py-3 text-slate-100 placeholder:text-slate-500 focus:border-cyan-400/50 focus:outline-none focus:ring-2 focus:ring-cyan-400'
+    'mt-2 w-full rounded-md border border-white/10 bg-black/25 px-3.5 py-3 text-neutral-100 placeholder:text-neutral-600 focus:border-emerald-400/45 focus:outline-none focus:ring-2 focus:ring-emerald-400/15'
 
   return (
     <div id="contact">
       <PortfolioWindow
         title="Contact"
-        subtitle="Start a conversation"
+        subtitle="Email workflow / available for opportunities"
         icon={Mail}
         focusOnMount
       >
         <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
-          <div className="rounded-[24px] border border-white/10 bg-white/[0.05] p-5 sm:p-6">
-            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-cyan-200">
+          <div className="rounded-lg border border-white/[0.09] bg-black/15 p-5 sm:p-6">
+            <p className="font-mono text-xs uppercase tracking-[0.14em] text-emerald-300">
               Direct channel
             </p>
-            <h3 className="mt-4 text-2xl font-semibold text-white">Let’s build something useful.</h3>
-            <p className="mt-4 text-sm leading-7 text-slate-300">
+            <h3 className="mt-4 text-2xl font-medium tracking-tight text-white">Let’s build something useful.</h3>
+            <p className="mt-4 text-sm leading-7 text-neutral-400">
               Share a little about your project or opportunity. Submitting this form opens your
               email application with the message prepared for you to review and send.
             </p>
             <a
               href={`mailto:${contactEmail}`}
-              className="mt-6 inline-flex break-all text-sm font-semibold text-cyan-200 underline decoration-cyan-400/40 underline-offset-4 hover:text-cyan-100"
+              className="mt-6 inline-flex break-all text-sm font-medium text-emerald-300 underline decoration-emerald-400/30 underline-offset-4 hover:text-emerald-200"
             >
               {contactEmail}
             </a>
@@ -48,29 +48,29 @@ function ContactPage() {
 
           <form
             onSubmit={handleSubmit}
-            className="space-y-5 rounded-[24px] border border-white/10 bg-slate-950/35 p-5 sm:p-6"
+            className="space-y-5 rounded-lg border border-white/[0.09] bg-black/20 p-5 sm:p-6"
           >
             <div className="grid gap-5 sm:grid-cols-2">
-              <label className="text-sm font-medium text-slate-200">
-                Name
+              <label className="text-sm font-medium text-neutral-300">
+                Name <span className="text-emerald-400" aria-hidden="true">*</span>
                 <input className={inputClassName} name="name" type="text" autoComplete="name" required />
               </label>
-              <label className="text-sm font-medium text-slate-200">
-                Email
+              <label className="text-sm font-medium text-neutral-300">
+                Email <span className="text-emerald-400" aria-hidden="true">*</span>
                 <input className={inputClassName} name="email" type="email" autoComplete="email" required />
               </label>
             </div>
-            <label className="block text-sm font-medium text-slate-200">
-              Subject
+            <label className="block text-sm font-medium text-neutral-300">
+              Subject <span className="text-emerald-400" aria-hidden="true">*</span>
               <input className={inputClassName} name="subject" type="text" required />
             </label>
-            <label className="block text-sm font-medium text-slate-200">
-              Message
+            <label className="block text-sm font-medium text-neutral-300">
+              Message <span className="text-emerald-400" aria-hidden="true">*</span>
               <textarea className={`${inputClassName} min-h-40 resize-y`} name="message" required />
             </label>
             <button
               type="submit"
-              className="inline-flex items-center gap-2 rounded-full border border-cyan-400/40 bg-cyan-400/15 px-5 py-3 text-sm font-semibold text-cyan-100 transition hover:bg-cyan-400/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+              className="inline-flex items-center gap-2 rounded-md border border-emerald-400/30 bg-emerald-400/[0.12] px-4 py-2.5 text-sm font-medium text-emerald-200 transition hover:border-emerald-300/45 hover:bg-emerald-400/[0.17] focus-visible:outline-none"
             >
               <Send className="h-4 w-4" aria-hidden="true" />
               Prepare email

@@ -21,42 +21,42 @@ function ProjectDetailWindow({ project, onClose }: ProjectDetailWindowProps) {
   return (
     <PortfolioWindow
       title={project.title}
-      subtitle="Project workspace"
+      subtitle={`Project record / ${project.id}`}
       icon={FolderKanban}
       focusOnMount
     >
-      <div className="space-y-6">
+      <div className="space-y-5">
         <button
           type="button"
           onClick={onClose}
-          className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-semibold text-slate-200 transition hover:border-cyan-400/40 hover:bg-cyan-400/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+          className="inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/[0.025] px-3 py-2 text-sm font-medium text-neutral-300 transition hover:border-white/20 hover:bg-white/[0.06] hover:text-white focus-visible:outline-none"
         >
           <ArrowLeft className="h-4 w-4" aria-hidden="true" />
           Back to projects
         </button>
 
         <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
-          <div className="rounded-[24px] border border-white/10 bg-white/[0.05] p-5 sm:p-6">
+          <div className="rounded-lg border border-white/[0.09] bg-black/15 p-5 sm:p-6">
             <div className="flex flex-wrap items-center justify-between gap-3">
-              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-200">
+              <p className="font-mono text-xs uppercase tracking-[0.14em] text-neutral-500">
                 Project overview
               </p>
-              <span className="rounded-full border border-cyan-400/25 bg-cyan-400/10 px-3 py-1 text-xs font-medium text-cyan-100">
+              <span className="rounded border border-emerald-400/20 bg-emerald-400/[0.08] px-2.5 py-1 text-xs font-medium text-emerald-300">
                 {project.status}
               </span>
             </div>
-            <p className="mt-5 text-base leading-8 text-slate-300">{project.description}</p>
+            <p className="mt-5 text-base leading-7 text-neutral-300">{project.description}</p>
           </div>
 
-          <aside className="rounded-[24px] border border-white/10 bg-slate-950/35 p-5 sm:p-6">
-            <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-300">
+          <aside className="rounded-lg border border-white/[0.09] bg-black/20 p-5 sm:p-6">
+            <h3 className="font-mono text-xs uppercase tracking-[0.14em] text-neutral-500">
               Technology stack
             </h3>
             <ul className="mt-4 flex flex-wrap gap-2">
               {project.techStack.map((technology) => (
                 <li
                   key={technology}
-                  className="rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-slate-300"
+                  className="rounded border border-white/[0.08] bg-white/[0.025] px-2.5 py-1.5 text-sm text-neutral-300"
                 >
                   {technology}
                 </li>
@@ -75,7 +75,7 @@ function ProjectDetailWindow({ project, onClose }: ProjectDetailWindowProps) {
                 target="_blank"
                 rel="noreferrer"
                 aria-label={`${link.label} for ${project.title} (opens in a new tab)`}
-                className="inline-flex items-center gap-2 rounded-full border border-cyan-400/35 bg-cyan-400/15 px-4 py-2.5 text-sm font-semibold text-cyan-100 transition hover:bg-cyan-400/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+                className="inline-flex items-center gap-2 rounded-md border border-emerald-400/25 bg-emerald-400/[0.1] px-3.5 py-2.5 text-sm font-medium text-emerald-200 transition hover:border-emerald-300/40 hover:bg-emerald-400/[0.15] focus-visible:outline-none"
               >
                 <Icon className="h-4 w-4" aria-hidden="true" />
                 {link.label}

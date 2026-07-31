@@ -8,6 +8,7 @@ interface PrimaryButtonProps {
   className?: string
   target?: string
   rel?: string
+  variant?: 'primary' | 'secondary'
 }
 
 function PrimaryButton({
@@ -18,10 +19,16 @@ function PrimaryButton({
   className = '',
   target,
   rel,
+  variant = 'primary',
 }: PrimaryButtonProps) {
+  const variantClassName =
+    variant === 'primary'
+      ? 'border-emerald-400/30 bg-emerald-400/[0.12] text-emerald-200 hover:border-emerald-300/45 hover:bg-emerald-400/[0.17]'
+      : 'border-white/10 bg-white/[0.03] text-neutral-300 hover:border-white/20 hover:bg-white/[0.06] hover:text-white'
+
   const content = (
-    <span className="inline-flex items-center justify-center gap-2 rounded-full border border-cyan-400/40 bg-cyan-400/15 px-4 py-2 text-sm font-semibold text-cyan-100 transition hover:bg-cyan-400/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400">
-      {Icon ? <Icon className="h-4 w-4" /> : null}
+    <span className={`inline-flex items-center justify-center gap-2 rounded-md border px-3.5 py-2 text-sm font-medium transition ${variantClassName}`}>
+      {Icon ? <Icon className="h-4 w-4" aria-hidden="true" /> : null}
       {label}
     </span>
   )

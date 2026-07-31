@@ -1,4 +1,4 @@
-import { Code2, FolderKanban, Mail, MonitorPlay } from 'lucide-react'
+import { Code2, FolderKanban, House, Mail } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import IconButton from '../ui/IconButton'
 
@@ -16,7 +16,7 @@ interface AppDockProps {
 
 function AppDock({
   apps = [
-    { id: 'home', label: 'Home', icon: MonitorPlay },
+    { id: 'home', label: 'Home', icon: House },
     { id: 'projects', label: 'Projects', icon: FolderKanban },
     { id: 'code', label: 'Code', icon: Code2 },
     { id: 'contact', label: 'Contact', icon: Mail },
@@ -27,9 +27,9 @@ function AppDock({
   return (
     <nav
       aria-label="Application dock"
-      className="pointer-events-none fixed inset-x-0 bottom-4 z-20 flex justify-center px-4"
+      className="pointer-events-none fixed inset-x-0 bottom-4 z-20 flex justify-center px-3 sm:bottom-6"
     >
-      <div className="pointer-events-auto flex items-center gap-2 rounded-full border border-white/10 bg-slate-900/80 px-2 py-2 shadow-[0_16px_60px_rgba(2,6,23,0.45)] backdrop-blur-xl">
+      <div className="pointer-events-auto flex items-center gap-1 rounded-lg border border-white/10 bg-[#111312]/95 p-1.5 shadow-[0_12px_35px_rgba(0,0,0,0.35)] backdrop-blur-md">
         {apps.map((app) => {
           const Icon = app.icon
           return (
@@ -39,7 +39,7 @@ function AppDock({
               label={app.label}
               active={activeAppId === app.id}
               onClick={() => onSelectApp?.(app.id)}
-              className="rounded-full border border-transparent bg-white/5 p-3"
+              className="group relative"
             />
           )
         })}

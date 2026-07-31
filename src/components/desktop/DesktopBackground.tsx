@@ -1,30 +1,67 @@
-import { motion } from 'framer-motion'
+import { useEffect, useRef } from 'react'
+import type { CSSProperties } from 'react'
 
-interface DesktopBackgroundProps {
-  className?: string
-  variant?: 'default' | 'subtle'
+interface MousePositionStyles extends CSSProperties {
+  '--mouse-x': string
+  '--mouse-y': string
 }
 
-function DesktopBackground({
-  className = '',
-  variant = 'default',
-}: DesktopBackgroundProps) {
-  const isSubtle = variant === 'subtle'
+function DesktopBackground() {
+  const backgroundRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const finePointer = window.matchMedia('(pointer: fine)')
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
+    let frameId = 0
+    let pointerX = window.innerWidth / 2
+    let pointerY = window.innerHeight / 3
+
+    const paint = () => {
+      frameId = 0
+      backgroundRef.current?.style.setProperty('--mouse-x', `${pointerX}px`)
+      backgroundRef.current?.style.setProperty('--mouse-y', `${pointerY}px`)
+    }
+
+    const handlePointerMove = (event: PointerEvent) => {
+      pointerX = event.clientX
+      pointerY = event.clientY
+      if (!frameId) frameId = window.requestAnimationFrame(paint)
+    }
+
+    const updateListener = () => {
+      window.removeEventListener('pointermove', handlePointerMove)
+      if (finePointer.matches && !reducedMotion.matches) {
+        window.addEventListener('pointermove', handlePointerMove, { passive: true })
+      }
+    }
+
+    updateListener()
+    finePointer.addEventListener('change', updateListener)
+    reducedMotion.addEventListener('change', updateListener)
+
+    return () => {
+      window.removeEventListener('pointermove', handlePointerMove)
+      finePointer.removeEventListener('change', updateListener)
+      reducedMotion.removeEventListener('change', updateListener)
+      if (frameId) window.cancelAnimationFrame(frameId)
+    }
+  }, [])
+
+  const initialPosition: MousePositionStyles = {
+    '--mouse-x': '50vw',
+    '--mouse-y': '30vh',
+  }
 
   return (
-    <div className={`pointer-events-none absolute inset-0 overflow-hidden ${className}`}>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(56,189,248,0.18),_transparent_36%),radial-gradient(circle_at_80%_20%,_rgba(14,116,144,0.3),_transparent_30%),linear-gradient(135deg,_#020617_0%,_#030712_42%,_#020617_100%)]" />
-      <motion.div
-        className="absolute left-[-12%] top-[-10%] h-72 w-72 rounded-full bg-cyan-500/20 blur-[120px]"
-        animate={{ x: [0, 16, -10, 0], y: [0, -20, 10, 0] }}
-        transition={{ duration: isSubtle ? 16 : 12, repeat: Infinity, ease: 'easeInOut' }}
-      />
-      <motion.div
-        className="absolute bottom-[-8%] right-[-10%] h-80 w-80 rounded-full bg-sky-600/20 blur-[140px]"
-        animate={{ x: [0, -24, 14, 0], y: [0, 18, -14, 0] }}
-        transition={{ duration: isSubtle ? 18 : 14, repeat: Infinity, ease: 'easeInOut' }}
-      />
-      <div className="absolute inset-0 bg-[linear-gradient(120deg,_transparent_0%,_rgba(148,163,184,0.07)_50%,_transparent_100%)]" />
+    <div
+      ref={backgroundRef}
+      style={initialPosition}
+      className="pointer-events-none fixed inset-0 overflow-hidden bg-[#090a0a]"
+      aria-hidden="true"
+    >
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(33,54,45,0.32),_transparent_48%),linear-gradient(180deg,_rgba(17,19,18,0.7),_#090a0a_70%)]" />
+      <div className="absolute inset-0 hidden bg-[radial-gradient(520px_circle_at_var(--mouse-x)_var(--mouse-y),_rgba(62,207,142,0.105),_transparent_68%)] motion-safe:block [@media(pointer:coarse)]:hidden" />
+      <div className="absolute inset-0 opacity-[0.17] [background-image:linear-gradient(rgba(255,255,255,0.045)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.045)_1px,transparent_1px)] [background-size:64px_64px] [mask-image:linear-gradient(to_bottom,black,transparent_80%)]" />
     </div>
   )
 }

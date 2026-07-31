@@ -1,64 +1,98 @@
-import { ArrowUpRight, Cpu, FileText, Sparkles } from 'lucide-react'
+import { ArrowRight, Bot, Code2, Cpu, FileText } from 'lucide-react'
 import PrimaryButton from '../ui/PrimaryButton'
 import PortfolioWindow from './PortfolioWindow'
 
-function HeroWindow() {
+interface HeroWindowProps {
+  onViewProjects: () => void
+}
+
+const technologies = ['React', 'TypeScript', 'Node.js', 'Express', 'PostgreSQL', "Next.js" , "Python", "REST APIs"]
+
+function HeroWindow({ onViewProjects }: HeroWindowProps) {
   return (
     <PortfolioWindow
-      title="Developer Mission Control"
-      subtitle="Building calm, reliable product experiences"
+      title="Developer overview"
+      subtitle="Profile / current focus"
       icon={Cpu}
-      className="relative">
-      <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
-        <div className="space-y-6">
-          <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-2 text-sm text-cyan-200">
-            <Sparkles className="h-4 w-4" />
-            Software Engineer Student • Full stack Developer
+      className="relative"
+    >
+      <div className="grid gap-8 lg:grid-cols-[1.3fr_0.7fr] lg:items-stretch">
+        <div className="flex flex-col justify-between">
+          <div>
+            <div className="inline-flex items-center gap-2 rounded-md border border-emerald-400/20 bg-emerald-400/[0.07] px-2.5 py-1.5 text-xs font-medium text-emerald-300">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+              Available for software opportunities
+            </div>
+            <div className="mt-6">
+              <p className="font-mono text-xs tracking-[0.14em] text-neutral-500 uppercase">
+                Laurin Vasquez
+              </p>
+              <h1 className="mt-3 max-w-3xl text-3xl font-medium tracking-[-0.035em] text-white sm:text-5xl sm:leading-[1.08]">
+                Computer Science student building practical full-stack software.
+              </h1>
+              <p className="mt-5 max-w-2xl text-base leading-7 text-neutral-400 sm:text-lg">
+                I build accessible web applications with React, TypeScript, Node.js,
+                Express, and PostgreSQL, and I’m especially interested in AI agents
+                and software that runs reliably in production.
+              </p>
+            </div>
           </div>
-          <div className="space-y-3">
-            <h1 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-              I turn real world ideas into reliable full-stack applications.
-            </h1>
-            <p className="max-w-2xl text-lg leading-8 text-slate-300">
-              I build responsive software with React, TypeScript, Node.js, Express,
-              and PostgreSQL, with a focus on clean architecture and practical user
-              experiences.
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-3">
-            <PrimaryButton label="View projects" href="#projects" icon={ArrowUpRight} />
+          <div className="mt-7 flex flex-wrap gap-2.5">
+            <PrimaryButton label="View projects" onClick={onViewProjects} icon={ArrowRight} />
+            <PrimaryButton
+              label="GitHub"
+              href="https://github.com/LaulinVasquez"
+              icon={Code2}
+              target="_blank"
+              rel="noreferrer"
+              variant="secondary"
+            />
             <PrimaryButton
               label="Open resume"
               href="/resume/Laurin-vasquez-resume.pdf"
               icon={FileText}
               target="_blank"
               rel="noreferrer"
+              variant="secondary"
             />
           </div>
         </div>
 
-        <div className="rounded-[24px] border border-white/10 bg-gradient-to-br from-slate-800/80 via-slate-900/80 to-slate-950/90 p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
+        <aside className="rounded-lg border border-white/[0.09] bg-black/20 p-4 sm:p-5">
           <div className="flex items-center justify-between">
-            <p className="text-sm font-medium uppercase tracking-[0.24em] text-slate-400">
+            <p className="font-mono text-xs uppercase tracking-[0.14em] text-neutral-500">
               Current focus
             </p>
-            <div className="rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-1 text-xs text-cyan-200">
-              2026
-            </div>
+            <Bot className="h-4 w-4 text-emerald-400" aria-hidden="true" />
           </div>
-          <div className="mt-5 space-y-4">
+          <div className="mt-5 space-y-3">
             {[
-              'Design systems with reusable UI primitives',
-              'Performance-focused React and TypeScript delivery',
-              'Accessible, recruiter-friendly product storytelling',
+              'AI agents and applied automation',
+              'Production-ready full-stack systems',
+              'Accessible, reusable interface architecture',
             ].map((point) => (
-              <div key={point} className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 px-3 py-3">
-                <span className="mt-1 h-2.5 w-2.5 rounded-full bg-cyan-400" />
-                <p className="text-sm leading-7 text-slate-300">{point}</p>
+              <div key={point} className="flex items-start gap-3 border-b border-white/[0.07] pb-3 last:border-0 last:pb-0">
+                <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-emerald-400" />
+                <p className="text-sm leading-6 text-neutral-300">{point}</p>
               </div>
             ))}
           </div>
-        </div>
+          <div className="mt-6 border-t border-white/[0.08] pt-4">
+            <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-neutral-600">
+              Core stack
+            </p>
+            <ul className="mt-3 flex flex-wrap gap-1.5" aria-label="Core technology stack">
+              {technologies.map((technology) => (
+                <li
+                  key={technology}
+                  className="rounded border border-white/[0.08] bg-white/[0.025] px-2 py-1 text-xs text-neutral-400"
+                >
+                  {technology}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </aside>
       </div>
     </PortfolioWindow>
   )

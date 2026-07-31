@@ -46,7 +46,11 @@ function PortfolioLayout() {
   const contentKey = selectedProject ? `project-${selectedProject.id}` : activeView
 
   let content = (
-    <HomePage onOpenProject={openProject} focusProjectId={returnFocusProjectId} />
+    <HomePage
+      onOpenProject={openProject}
+      onViewProjects={() => selectApp('projects')}
+      focusProjectId={returnFocusProjectId}
+    />
   )
 
   if (activeView === 'projects') {

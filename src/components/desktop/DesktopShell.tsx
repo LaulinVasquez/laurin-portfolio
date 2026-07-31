@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import type { ReactNode } from 'react'
 import AppDock from '../navigation/AppDock'
 import TopBar from '../navigation/TopBar'
@@ -12,28 +12,25 @@ interface DesktopShellProps {
 }
 
 function DesktopShell({ children, contentKey, activeAppId, onSelectApp }: DesktopShellProps) {
+  const shouldReduceMotion = useReducedMotion()
+
   return (
-    <div className="relative min-h-screen overflow-hidden bg-slate-950 text-slate-100">
+    <div className="relative min-h-screen overflow-x-hidden bg-[#090a0a] text-neutral-100">
       <DesktopBackground />
       <div className="relative z-10 flex min-h-screen flex-col">
         <TopBar
-          brandName="Laurin OS"
-          navItems={[
-            { label: 'Home', href: '#home' },
-            // { label: 'Projects', href: '#projects' },
-            // { label: 'Contact', href: '#contact' },
-          ]}
-          statusText="Available for product teams"
+          activeAppId={activeAppId}
+          onSelectApp={onSelectApp}
         />
-        <main className="flex-1 px-4 pb-28 pt-4 sm:px-6 lg:px-8">
+        <main className="flex-1 px-3 pb-28 pt-4 sm:px-6 sm:pt-6 lg:px-8 lg:pb-32">
           <AnimatePresence mode="wait" initial={false}>
             <motion.div
               key={contentKey}
-              className="mx-auto flex max-w-6xl flex-col gap-6"
-              initial={{ opacity: 0, y: 18, scale: 0.99 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -12, scale: 0.99 }}
-              transition={{ duration: 0.28, ease: 'easeOut' }}
+              className="mx-auto flex max-w-6xl flex-col gap-5 sm:gap-6"
+              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: -6 }}
+              transition={{ duration: shouldReduceMotion ? 0 : 0.22, ease: 'easeOut' }}
             >
               {children}
             </motion.div>

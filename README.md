@@ -1,8 +1,8 @@
 # Laurin OS Portfolio
 
-Laurin OS is my personal software engineering portfolio. It presents selected work through a responsive, desktop-inspired interface built with React and TypeScript.
+Laurin OS is my personal software engineering portfolio. It presents selected work through a responsive, developer-platform-inspired interface built with React and TypeScript.
 
-Instead of traditional portfolio pages, the site uses reusable application windows and a functional dock to move between the home screen, featured projects, individual project workspaces, source code, and contact form.
+Instead of traditional portfolio pages, the site uses reusable application panels and a functional dock to move between the home screen, featured projects, individual project workspaces, source code, and contact form.
 
 ## Live Portfolio
 
@@ -10,7 +10,8 @@ Visit the deployed portfolio at [laurin-portfolio.vercel.app](https://laurin-por
 
 ## Current Features
 
-- Desktop-inspired interface with translucent windows and a fixed application dock
+- Structured dark interface with restrained green accents and a fixed application dock
+- Fine-pointer background illumination with static touch and reduced-motion fallbacks
 - Responsive layouts for desktop, tablet, and mobile screens
 - Data-driven featured project cards
 - Dedicated project detail windows using the shared `PortfolioWindow` component
@@ -44,9 +45,11 @@ An Elixir bank account simulator built around OTP processes for account creation
 
 ### Garden & Landscaping Pros
 
-A responsive service website with an Express backend and validated quote-request workflow capable of delivering structured emails.
+A responsive marketing and lead-generation website that presents landscaping services, project work, and a clear path to request a quote.
 
-**Technologies:** Node.js, Express, EJS, Nodemailer, CSS
+**Technologies:** Next.js, React, TypeScript, Tailwind CSS
+
+**Live site:** [garden-landscaping-pros-website.vercel.app](https://garden-landscaping-pros-website.vercel.app/)
 
 Project titles, descriptions, statuses, technology stacks, and links are maintained in `src/data/projects.ts`.
 
@@ -65,7 +68,7 @@ Project titles, descriptions, statuses, technology stacks, and links are maintai
 ```text
 src/
 ├── components/
-│   ├── desktop/       # Desktop shell and background
+│   ├── desktop/       # Application shell and pointer-aware background
 │   ├── navigation/    # Top bar and application dock
 │   ├── projects/      # Project cards, grid, and detail window
 │   ├── ui/            # Reusable buttons

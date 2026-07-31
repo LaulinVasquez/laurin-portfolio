@@ -4,13 +4,14 @@ import type { Project } from '../types/project'
 
 interface HomePageProps {
   onOpenProject: (project: Project) => void
+  onViewProjects: () => void
   focusProjectId?: string | null
 }
 
-function HomePage({ onOpenProject, focusProjectId = null }: HomePageProps) {
+function HomePage({ onOpenProject, onViewProjects, focusProjectId = null }: HomePageProps) {
   return (
-    <section id="home" className="flex w-full flex-col gap-6">
-      <HeroWindow />
+    <section id="home" className="flex w-full flex-col gap-5 sm:gap-6">
+      <HeroWindow onViewProjects={onViewProjects} />
       <FeaturedProjects onOpenProject={onOpenProject} focusProjectId={focusProjectId} />
     </section>
   )

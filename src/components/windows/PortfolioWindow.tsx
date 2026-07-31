@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import { useEffect, useRef } from 'react'
 import type { ReactNode } from 'react'
 import type { LucideIcon } from 'lucide-react'
@@ -23,6 +23,7 @@ function PortfolioWindow({
   focusOnMount = false,
 }: PortfolioWindowProps) {
   const headingRef = useRef<HTMLHeadingElement>(null)
+  const shouldReduceMotion = useReducedMotion()
 
   useEffect(() => {
     if (focusOnMount) {
@@ -32,37 +33,36 @@ function PortfolioWindow({
 
   return (
     <motion.section
-      initial={{ opacity: 0, y: 20 }}
+      initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.45, ease: 'easeOut' }}
-      className={`w-full overflow-hidden rounded-[28px] border border-white/10 bg-slate-900/70 shadow-[0_20px_60px_rgba(2,6,23,0.4)] backdrop-blur-xl ${className}`.trim()}
+      transition={{ duration: shouldReduceMotion ? 0 : 0.28, ease: 'easeOut' }}
+      className={`w-full overflow-hidden rounded-xl border border-white/[0.09] bg-[#111312]/90 shadow-[0_18px_50px_rgba(0,0,0,0.22)] ${className}`.trim()}
       aria-label={title}
     >
-      <div className="flex items-center justify-between border-b border-white/10 px-5 py-4 sm:px-6">
+      <div className="flex min-h-14 items-center justify-between border-b border-white/[0.08] bg-white/[0.015] px-4 py-3 sm:px-5">
         <div className="flex items-center gap-3">
           {Icon ? (
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-cyan-400/20 bg-cyan-400/10 text-cyan-200">
-              <Icon className="h-4 w-4" />
+            <div className="flex h-8 w-8 items-center justify-center rounded-md border border-emerald-400/20 bg-emerald-400/[0.07] text-emerald-300">
+              <Icon className="h-3.5 w-3.5" aria-hidden="true" />
             </div>
           ) : null}
           <div>
             <h2
               ref={headingRef}
               tabIndex={focusOnMount ? -1 : undefined}
-              className="text-sm font-semibold tracking-[0.24em] text-slate-200 uppercase focus-visible:rounded-sm focus-visible:outline-none"
+              className="text-xs font-medium tracking-[0.16em] text-neutral-200 uppercase focus-visible:rounded-sm focus-visible:outline-none"
             >
               {title}
             </h2>
-            {subtitle ? <p className="text-sm text-slate-400">{subtitle}</p> : null}
+            {subtitle ? <p className="mt-0.5 text-xs text-neutral-500">{subtitle}</p> : null}
           </div>
         </div>
-        <div className="flex items-center gap-2">
-          <span className="h-2.5 w-2.5 rounded-full bg-emerald-500" />
-          <span className="h-2.5 w-2.5 rounded-full bg-amber-500" />
-          <span className="h-2.5 w-2.5 rounded-full bg-rose-500" />
+        <div className="flex items-center gap-2 text-[10px] font-medium tracking-[0.12em] text-neutral-600 uppercase">
+          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+          Active
         </div>
       </div>
-      <div className={`px-5 py-5 sm:px-6 ${compact ? 'sm:py-6' : 'sm:py-8'}`}>{children}</div>
+      <div className={`p-4 sm:p-6 ${compact ? '' : 'lg:p-7'}`}>{children}</div>
     </motion.section>
   )
 }

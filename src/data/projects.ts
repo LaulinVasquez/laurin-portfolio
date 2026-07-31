@@ -60,14 +60,19 @@ export const projects: Project[] = [
     id: 'garden-landscaping-pros',
     title: 'Garden & Landscaping Pros',
     description:
-      'A responsive service website with an MVC-style Express backend and a validated quote-request workflow that can deliver structured emails.',
-    techStack: ['Node.js', 'Express', 'EJS', 'Nodemailer', 'CSS'],
-    status: 'In development',
+      'A responsive marketing and lead-generation website that presents landscaping services, project work, and a clear path to request a quote.',
+    techStack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
+    status: 'Live',
     links: [
       {
-        label: 'GitHub',
+        label: 'View source code',
         href: 'https://github.com/LaulinVasquez/garden-landscaping-pros-website',
         kind: 'github',
+      },
+      {
+        label: 'View live site',
+        href: 'https://garden-landscaping-pros-website.vercel.app/',
+        kind: 'demo',
       },
     ],
   },

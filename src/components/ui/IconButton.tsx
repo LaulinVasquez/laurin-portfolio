@@ -24,11 +24,11 @@ function IconButton({
       title={label}
       onClick={onClick}
       disabled={disabled}
-      className={`flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/10 text-slate-200 transition hover:border-cyan-400/40 hover:bg-cyan-400/15 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 ${
-        active ? 'border-cyan-400/40 bg-cyan-400/15 text-cyan-200 shadow-[0_0_25px_rgba(34,211,238,0.16)]' : ''
+      className={`flex h-10 min-w-10 items-center justify-center rounded-md border border-transparent px-2 text-neutral-400 transition hover:border-white/10 hover:bg-white/[0.05] hover:text-white focus-visible:outline-none ${
+        active ? 'border-emerald-400/20 bg-emerald-400/[0.09] text-emerald-300' : ''
       } ${disabled ? 'cursor-not-allowed opacity-60' : ''} ${className}`.trim()}
     >
-      <Icon className="h-5 w-5" />
+      <Icon className="h-[18px] w-[18px]" aria-hidden="true" />
     </button>
   )
 }

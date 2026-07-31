@@ -18,12 +18,12 @@ function FeaturedProjects({
   return (
     <div id="projects" className="scroll-mt-20">
       <PortfolioWindow
-        title="Featured Projects"
-        subtitle="Selected builds from concept to deployment"
+        title="Featured projects"
+        subtitle={`${projects.length} selected builds / source and deployment details`}
         icon={FolderKanban}
         focusOnMount={focusOnMount}
       >
-        <div className="grid gap-5 md:grid-cols-2">
+        <div className="grid gap-4 md:grid-cols-2">
           {projects.map((project) => (
             <ProjectCard
               key={project.id}
