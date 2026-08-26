@@ -6,7 +6,7 @@ function ProjectCard({ project }: { project: Project }) {
   const github = project.links.find((link) => link.kind === 'github')
   const demo = project.links.find((link) => link.kind === 'demo')
   return (
-    <article className="project-card">
+    <article className="project-card" data-project={project.id} data-status={project.status}>
       <div className="project-card-image">
         <img src={project.image} alt={project.imageAlt} width="1280" height="720" loading="lazy" />
       </div>

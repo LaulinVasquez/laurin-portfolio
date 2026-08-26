@@ -1,6 +1,7 @@
 import { skillGroups } from '../../data/skills'
 import Reveal from '../ui/Reveal'
 import SectionHeading from '../ui/SectionHeading'
+import TechnologyLogo from './TechnologyLogo'
 
 function TechStackSection() {
   return (
@@ -10,7 +11,14 @@ function TechStackSection() {
         {skillGroups.map((group) => (
           <article className="skill-group" key={group.label}>
             <h3>{group.label}</h3>
-            <ul>{group.items.map((item) => <li key={item}>{item}</li>)}</ul>
+            <ul>
+              {group.items.map((item) => (
+                <li key={item}>
+                  <span className="technology-logo"><TechnologyLogo name={item} /></span>
+                  {item}
+                </li>
+              ))}
+            </ul>
           </article>
         ))}
       </Reveal>

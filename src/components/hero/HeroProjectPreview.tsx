@@ -26,6 +26,7 @@ function HeroProjectPreview() {
   return (
     <div
       className="project-window"
+      data-project={project.id}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onFocusCapture={() => setPaused(true)}
