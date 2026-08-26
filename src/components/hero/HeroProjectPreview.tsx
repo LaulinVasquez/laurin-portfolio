@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { useReducedMotion } from 'framer-motion'
 import { projects } from '../../data/projects'
 import TechBadge from '../ui/TechBadge'
+import ProjectDevicePreview from '../projects/ProjectDevicePreview'
 
 const slides = projects.filter((project) => project.heroEligible)
 
@@ -41,9 +42,7 @@ function HeroProjectPreview() {
         <span>Featured build</span>
         <span>{index + 1}/{slides.length}</span>
       </div>
-      <div className="window-image">
-        <img key={project.id} src={project.image} alt={project.imageAlt} width="1280" height="720" />
-      </div>
+      <ProjectDevicePreview key={project.id} project={project} priority />
       <div className="window-content" aria-live="polite">
         <div>
           <p className="eyebrow">Selected project</p>

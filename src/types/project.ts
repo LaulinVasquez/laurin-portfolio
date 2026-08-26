@@ -17,6 +17,8 @@ export interface Project {
   links: ProjectLink[]
   image: string
   imageAlt: string
+  mobileImage?: string
+  mobileImageAlt?: string
   featured?: boolean
   heroEligible?: boolean
 }

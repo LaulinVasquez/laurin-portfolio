@@ -1,15 +1,14 @@
 import { ArrowUpRight, Code2 } from 'lucide-react'
 import type { Project } from '../../types/project'
 import TechBadge from '../ui/TechBadge'
+import ProjectDevicePreview from './ProjectDevicePreview'
 
 function ProjectCard({ project }: { project: Project }) {
   const github = project.links.find((link) => link.kind === 'github')
   const demo = project.links.find((link) => link.kind === 'demo')
   return (
     <article className="project-card" data-project={project.id} data-status={project.status}>
-      <div className="project-card-image">
-        <img src={project.image} alt={project.imageAlt} width="1280" height="720" loading="lazy" />
-      </div>
+      <ProjectDevicePreview project={project} />
       <div className="project-card-content">
         <div className="project-title-row"><h3>{project.title}</h3><span>{project.status}</span></div>
         <p>{project.description}</p>

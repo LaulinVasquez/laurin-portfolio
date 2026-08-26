@@ -74,6 +74,15 @@ Replace the explicit placeholder assets when the real files are available:
 
 Update the matching paths in `src/data/projects.ts` when adding project screenshots.
 
+Each project preview supports a side-by-side desktop and mobile pair. Use this convention for new files:
+
+```text
+public/projects/<project-id>/desktop.webp
+public/projects/<project-id>/mobile.webp
+```
+
+Set `image` and `imageAlt` for the desktop rendering, then `mobileImage` and `mobileImageAlt` for the phone rendering in `src/data/projects.ts`.
+
 ## Contact
 
 - GitHub: [LaulinVasquez](https://github.com/LaulinVasquez)
