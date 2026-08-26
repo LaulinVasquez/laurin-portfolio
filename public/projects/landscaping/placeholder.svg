@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Garden and Landscaping Pros screenshot placeholder</title>
+  <desc id="desc">A dark green placeholder marking where an actual website screenshot should be added.</desc>
+  <rect width="1280" height="720" fill="#0b1410"/>
+  <path d="M0 570c210-125 390-96 565-4 180 95 363 116 715-80v234H0z" fill="#10261b"/>
+  <circle cx="640" cy="302" r="104" fill="none" stroke="#54e6a0" stroke-opacity=".25" stroke-width="2"/>
+  <path d="M640 380V244m0 58c-52-8-78-37-89-78 54 4 84 33 89 78Zm0 34c55-8 84-39 94-83-57 5-89 36-94 83Z" fill="none" stroke="#54e6a0" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="640" y="460" text-anchor="middle" fill="#d6e4dc" font-family="system-ui,sans-serif" font-size="30" font-weight="600">Garden &amp; Landscaping Pros</text>
+  <text x="640" y="502" text-anchor="middle" fill="#82948a" font-family="monospace" font-size="18">WEBSITE SCREENSHOT NEEDED</text>
+</svg>

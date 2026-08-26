@@ -1,124 +1,62 @@
-# Laurin OS Portfolio
+# Laurin Vasquez Portfolio
 
-Laurin OS is my personal software engineering portfolio. It presents selected work through a responsive, developer-platform-inspired interface built with React and TypeScript.
+A polished, accessible single-page developer portfolio built with React, TypeScript, Vite, authored CSS, Framer Motion, and Lucide React.
 
-Instead of traditional portfolio pages, the site uses reusable application panels and a functional dock to move between the home screen, featured projects, individual project workspaces, source code, and contact form.
+## Live portfolio
 
-## Live Portfolio
+[laurin-portfolio.vercel.app](https://laurin-portfolio.vercel.app/)
 
-Visit the deployed portfolio at [laurin-portfolio.vercel.app](https://laurin-portfolio.vercel.app/).
+## Experience
 
-## Current Features
+- Sticky section navigation with an Intersection Observer active state
+- Accessible mobile menu with Escape handling and focus restoration
+- Pointer-follow ambient lighting without pointer-move React renders
+- Reduced-motion fallbacks for lighting, scrolling, reveals, and the project carousel
+- Rotating featured-project preview with manual controls and pause-on-interaction behavior
+- Responsive About, specialization, technology, project, journey, and contact sections
+- Mailto-based contact form
+- Local résumé and project screenshots
 
-- Structured dark interface with restrained green accents and a fixed application dock
-- Fine-pointer background illumination with static touch and reduced-motion fallbacks
-- Responsive layouts for desktop, tablet, and mobile screens
-- Data-driven featured project cards
-- Dedicated project detail windows using the shared `PortfolioWindow` component
-- Smooth view transitions powered by Framer Motion
-- GitHub and live-demo links when available
-- Contact form that prepares an email addressed to `laurin171125@gmail.com`
-- Downloadable résumé
-- Keyboard-accessible navigation and project controls
-- Focus movement and restoration when opening and closing project windows
-- Reduced-motion support through the user's operating-system preference
+## Featured projects
 
-## Featured Projects
+Project descriptions, technologies, screenshots, and links are centralized in `src/data/projects.ts`.
 
-### Smart Budget Pro
+- Smart Budget Pro
+- FlowDesk
+- Garden & Landscaping Pros
+- Buff Me Up
+- Stock Market Dashboard
 
-A full-stack personal finance application for managing transactions, budgets, financial goals, and advisor requests through role-based workflows.
-
-**Technologies:** Node.js, Express, PostgreSQL, EJS, CSS
-
-### Stock Market Dashboard
-
-A deployed Streamlit dashboard for comparing stock tickers, reviewing current market metrics, and exploring interactive price charts.
-
-**Technologies:** Python, Streamlit, yfinance, Plotly
-
-### OTP Bank
-
-An Elixir bank account simulator built around OTP processes for account creation, deposits, withdrawals, balances, and transaction history.
-
-**Technologies:** Elixir, OTP, GenServer, DynamicSupervisor, Registry
-
-### Garden & Landscaping Pros
-
-A responsive marketing and lead-generation website that presents landscaping services, project work, and a clear path to request a quote.
-
-**Technologies:** Next.js, React, TypeScript, Tailwind CSS
-
-**Live site:** [garden-landscaping-pros-website.vercel.app](https://garden-landscaping-pros-website.vercel.app/)
-
-Project titles, descriptions, statuses, technology stacks, and links are maintained in `src/data/projects.ts`.
-
-## Technology Stack
-
-- React 19
-- TypeScript
-- Vite
-- Tailwind CSS
-- Framer Motion
-- Lucide React
-- Oxlint
-
-## Project Structure
+## Project structure
 
 ```text
 src/
 ├── components/
-│   ├── desktop/       # Application shell and pointer-aware background
-│   ├── navigation/    # Top bar and application dock
-│   ├── projects/      # Project cards, grid, and detail window
-│   ├── ui/            # Reusable buttons
-│   └── windows/       # Shared portfolio window components
-├── data/              # Project, skill, and experience content
-├── layouts/           # Desktop view state and application composition
-├── pages/             # Home and contact views
-├── styles/            # Global styles and animations
-└── types/             # Shared TypeScript types
+│   ├── about/
+│   ├── contact/
+│   ├── experience/
+│   ├── hero/
+│   ├── layout/
+│   ├── navigation/
+│   ├── projects/
+│   ├── skills/
+│   ├── specialization/
+│   └── ui/
+├── data/
+├── hooks/
+├── pages/
+├── styles/
+└── types/
 ```
 
-## Getting Started
-
-### Prerequisites
-
-- Node.js 20 or newer
-- npm
-
-### Installation
+## Development
 
 ```bash
-git clone https://github.com/LaulinVasquez/laurin-portfolio.git
-cd laurin-portfolio
 npm install
-```
-
-### Development
-
-```bash
 npm run dev
 ```
 
-Vite will print the local development URL in the terminal.
-
-### Production Build
-
-```bash
-npm run build
-npm run preview
-```
-
-## Deployment
-
-The portfolio is deployed on Vercel:
-
-- [https://laurin-portfolio.vercel.app/](https://laurin-portfolio.vercel.app/)
-
-## Validation
-
-Run the repository checks before committing changes:
+Validation:
 
 ```bash
 npm run lint
@@ -126,21 +64,17 @@ npm run build
 git diff --check
 ```
 
-`git diff --check` is a Git command. Running `npm diff --check` instead makes npm search its public registry for a package named `laurin-portfolio` and results in a 404 because this project is private and unpublished.
+## Assets still needed
 
-## Navigation and Accessibility
+Replace the explicit placeholder assets when the real files are available:
 
-The application dock switches between in-page desktop views without introducing routing or a complex window manager. Project cards use a dedicated Open Project button so their external links remain separate, valid interactive controls.
+- Portrait: `public/images/laurin-profile.webp`
+- Garden & Landscaping Pros screenshot: `public/projects/landscaping/homepage.webp`
+- Buff Me Up screenshot: `public/projects/buff-me-up/dashboard.webp`
 
-When a project opens, focus moves to the project window heading. The visible Back button or `Escape` key closes the window and restores focus to the matching project card. External destinations include descriptive labels and indicate that they open in a new tab.
+Update the matching paths in `src/data/projects.ts` when adding project screenshots.
 
-## Contact Form
+## Contact
 
-The Contact dock item opens a form for entering a name, email address, subject, and message. Submitting the form launches the visitor's configured email application with a prepared message addressed to Laurin. This approach does not require API credentials or expose email-service secrets in the frontend.
-
-## Author
-
-Laurin Vasquez
-
-- [GitHub](https://github.com/LaulinVasquez)
+- GitHub: [LaulinVasquez](https://github.com/LaulinVasquez)
 - Email: [laurin171125@gmail.com](mailto:laurin171125@gmail.com)

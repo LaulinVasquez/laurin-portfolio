@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Buff Me Up screenshot placeholder</title>
+  <desc id="desc">A dark green placeholder marking where an actual application screenshot should be added.</desc>
+  <rect width="1280" height="720" fill="#0b1210"/>
+  <rect x="510" y="90" width="260" height="500" rx="35" fill="#101b17" stroke="#54e6a0" stroke-opacity=".25" stroke-width="3"/>
+  <path d="M566 344h35l20-56 38 132 24-76h31" fill="none" stroke="#54e6a0" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="640" y="650" text-anchor="middle" fill="#d6e4dc" font-family="system-ui,sans-serif" font-size="30" font-weight="600">Buff Me Up</text>
+  <text x="640" y="686" text-anchor="middle" fill="#82948a" font-family="monospace" font-size="17">APPLICATION SCREENSHOT NEEDED</text>
+</svg>

@@ -1,7 +1,7 @@
-import PortfolioLayout from './layouts/PortfolioLayout'
+import PortfolioPage from './pages/PortfolioPage'
 
 function App() {
-  return <PortfolioLayout />
+  return <PortfolioPage />
 }
 
 export default App

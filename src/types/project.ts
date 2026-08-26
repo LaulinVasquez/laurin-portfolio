@@ -15,4 +15,8 @@ export interface Project {
   techStack: string[]
   status: ProjectStatus
   links: ProjectLink[]
+  image: string
+  imageAlt: string
+  featured?: boolean
+  heroEligible?: boolean
 }
