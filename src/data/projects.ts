@@ -49,7 +49,7 @@ export const projects: Project[] = [
     title: 'Buff Me Up',
     description:
       'A mobile-first gym tracker for workout plans, exercise logging, workout history, consistency, and Google-authenticated accounts.',
-    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Supabase', 'PostgreSQL'],
+    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Supabase', 'PostgreSQL', 'Swift', 'Xcode'],
     status: 'Live',
     image: '/projects/buff-me-up/buffmeup_desktop.png',
     imageAlt: 'Buff Me Up desktop workout dashboard showing a full-body workout plan and recent activity',
