@@ -9,6 +9,7 @@ function PortfolioHeader() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const menuButtonRef = useRef<HTMLButtonElement>(null)
+  const navRef = useRef<HTMLElement>(null)
   const firstLinkRef = useRef<HTMLAnchorElement>(null)
   const active = useActiveSection(sectionIds)
 
@@ -28,6 +29,23 @@ function PortfolioHeader() {
       if (event.key === 'Escape') {
         setOpen(false)
         menuButtonRef.current?.focus()
+        return
+      }
+
+      if (event.key === 'Tab') {
+        const focusable = Array.from(
+          navRef.current?.querySelectorAll<HTMLElement>('a[href], button:not([disabled])') ?? [],
+        )
+        const first = focusable[0]
+        const last = focusable.at(-1)
+
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault()
+          last?.focus()
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault()
+          first?.focus()
+        }
       }
     }
     window.addEventListener('keydown', onKeyDown)
@@ -36,6 +54,15 @@ function PortfolioHeader() {
       window.removeEventListener('keydown', onKeyDown)
     }
   }, [open])
+
+  useEffect(() => {
+    const desktop = window.matchMedia('(min-width: 961px)')
+    const closeOnDesktop = () => {
+      if (desktop.matches) setOpen(false)
+    }
+    desktop.addEventListener('change', closeOnDesktop)
+    return () => desktop.removeEventListener('change', closeOnDesktop)
+  }, [])
 
   const close = () => setOpen(false)
 
@@ -46,7 +73,24 @@ function PortfolioHeader() {
           <span className="brand-mark" aria-hidden="true">LV</span>
           <span>{site.name}</span>
         </a>
-        <nav id="mobile-navigation" className={`site-nav ${open ? 'is-open' : ''}`} aria-label="Primary navigation">
+        {open ? (
+          <button
+            className="menu-backdrop"
+            type="button"
+            tabIndex={-1}
+            aria-label="Close navigation menu"
+            onClick={() => {
+              close()
+              menuButtonRef.current?.focus()
+            }}
+          />
+        ) : null}
+        <nav
+          ref={navRef}
+          id="mobile-navigation"
+          className={`site-nav ${open ? 'is-open' : ''}`}
+          aria-label="Primary navigation"
+        >
           {navigation.map((item, index) => (
             <a
               key={item.id}

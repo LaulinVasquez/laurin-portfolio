@@ -22,10 +22,15 @@ function HeroSection() {
       </div>
       <div className="hero-visual">
         <div className="portrait-frame">
-          <div className="portrait-placeholder" role="img" aria-label="Portrait placeholder for Laurin Vasquez">
-            <span>LV</span>
-            <small>Portrait coming soon</small>
-          </div>
+          <img
+            className="portrait-photo"
+            src="/images/laurin-profile.webp"
+            alt="Laurin Vasquez standing outdoors in front of a mountain landscape"
+            width="1600"
+            height="1200"
+            fetchPriority="high"
+            decoding="async"
+          />
         </div>
         <HeroProjectPreview />
       </div>
