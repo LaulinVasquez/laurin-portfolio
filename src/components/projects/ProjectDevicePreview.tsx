@@ -33,25 +33,27 @@ function ProjectDevicePreview({ project, priority = false }: ProjectDevicePrevie
           <span className="phone-button phone-button-top" aria-hidden="true" />
           <span className="phone-button phone-button-bottom" aria-hidden="true" />
           <div className="phone-screen">
-            {project.mobileImage ? (
-              <img
-                src={project.mobileImage}
-                alt={project.mobileImageAlt ?? `${project.title} mobile interface`}
-                width="430"
-                height="932"
-                loading={priority ? 'eager' : 'lazy'}
-                fetchPriority={priority ? 'high' : 'auto'}
-              />
-            ) : (
-              <div
-                className="mobile-image-placeholder"
-                role="img"
-                aria-label={`Mobile screenshot placeholder for ${project.title}`}
-              >
-                <ImagePlus aria-hidden="true" />
-                <span>Mobile image</span>
-              </div>
-            )}
+            <div className="phone-viewport">
+              {project.mobileImage ? (
+                <img
+                  src={project.mobileImage}
+                  alt={project.mobileImageAlt ?? `${project.title} mobile interface`}
+                  width="430"
+                  height="932"
+                  loading={priority ? 'eager' : 'lazy'}
+                  fetchPriority={priority ? 'high' : 'auto'}
+                />
+              ) : (
+                <div
+                  className="mobile-image-placeholder"
+                  role="img"
+                  aria-label={`Mobile screenshot placeholder for ${project.title}`}
+                >
+                  <ImagePlus aria-hidden="true" />
+                  <span>Mobile image</span>
+                </div>
+              )}
+            </div>
           </div>
         </div>
         <figcaption>Mobile</figcaption>

@@ -92,8 +92,10 @@ export const projects: Project[] = [
       'A responsive marketing and lead-generation website that presents landscaping services, project work, and a clear path to request a quote.',
     techStack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
     status: 'Live',
-    image: '/projects/landscaping/placeholder.svg',
-    imageAlt: 'Garden and Landscaping Pros website preview placeholder',
+    image: '/projects/landscaping/landscaping_desktop.webp',
+    imageAlt: 'Garden and Landscaping Pros desktop services page with landscaping project cards',
+    mobileImage: '/projects/landscaping/landscaping_mobile.webp',
+    mobileImageAlt: 'Garden and Landscaping Pros mobile homepage with quote actions and garden imagery',
     heroEligible: true,
     links: [
       {
