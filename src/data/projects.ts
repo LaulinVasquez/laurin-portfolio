@@ -10,7 +10,7 @@ export const projects: Project[] = [
     status: 'In development',
     image: '/projects/smart-budget-pro/smartbudget_desktop.png',
     imageAlt: 'Smart Budget Pro financial dashboard showing budgets and account activity',
-    mobileImage: '/projects/smart-budget-pro/smartbudget_mobile.png',
+    mobileImage: '/projects/mobile_pictures/SmartBudget.jpg',
     mobileImageAlt: 'Smart Budget Pro mobile financial overview with balance, income, expenses, and quick actions',
     featured: true,
     heroEligible: true,
@@ -36,7 +36,7 @@ export const projects: Project[] = [
     status: 'Live',
     image: '/projects/flowdesk/flowDesk_desktop.png',
     imageAlt: 'FlowDesk task management dashboard on a desktop screen',
-    mobileImage: '/projects/flowdesk/flowDesk_mobile.png',
+    mobileImage: '/projects/mobile_pictures/FlowDesk.jpg',
     mobileImageAlt: 'FlowDesk mobile task dashboard with statistics, filters, and task cards',
     heroEligible: true,
     links: [
@@ -53,8 +53,8 @@ export const projects: Project[] = [
     status: 'Live',
     image: '/projects/buff-me-up/buffmeup_desktop.png',
     imageAlt: 'Buff Me Up desktop workout dashboard showing a full-body workout plan and recent activity',
-    mobileImage: '/projects/buff-me-up/buffmeup_mobile.png',
-    mobileImageAlt: 'Buff Me Up mobile plan builder with active and recommended workout plans',
+    mobileImage: '/projects/mobile_pictures/BuffMeUp.jpg',
+    mobileImageAlt: 'Buff Me Up mobile workout dashboard showing a suggested lower-body workout and navigation',
     heroEligible: true,
     links: [
       { label: 'GitHub', href: 'https://github.com/LaulinVasquez/Buff-me-up', kind: 'github' },
@@ -70,7 +70,7 @@ export const projects: Project[] = [
     status: 'Live',
     image: '/projects/stock-dashboard/stock_desktop.png',
     imageAlt: 'Stock Market Dashboard showing ticker metrics and an interactive price chart',
-    mobileImage: '/projects/stock-dashboard/stock_mobile.png',
+    mobileImage: '/projects/mobile_pictures/Stock.jpg',
     mobileImageAlt: 'Stock Market Dashboard mobile view showing a price chart and market metrics',
     links: [
       {
@@ -94,7 +94,7 @@ export const projects: Project[] = [
     status: 'Live',
     image: '/projects/landscaping/landscaping_desktop.webp',
     imageAlt: 'Garden and Landscaping Pros desktop services page with landscaping project cards',
-    mobileImage: '/projects/landscaping/landscaping_mobile.webp',
+    mobileImage: '/projects/mobile_pictures/Landscaping.jpg',
     mobileImageAlt: 'Garden and Landscaping Pros mobile homepage with quote actions and garden imagery',
     heroEligible: true,
     links: [

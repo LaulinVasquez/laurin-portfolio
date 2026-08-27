@@ -38,8 +38,8 @@ function ProjectDevicePreview({ project, priority = false }: ProjectDevicePrevie
                 <img
                   src={project.mobileImage}
                   alt={project.mobileImageAlt ?? `${project.title} mobile interface`}
-                  width="430"
-                  height="932"
+                  width="471"
+                  height="1024"
                   loading={priority ? 'eager' : 'lazy'}
                   fetchPriority={priority ? 'high' : 'auto'}
                 />
